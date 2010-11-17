@@ -65,7 +65,7 @@ sub main
 	usage() if (!$rz or $opt_help or !defined($m_fin)); # exit
 	
 	if (!defined($opt_output)) { $m_fout = $m_fin . '.dat'; }
-	else { $m_fout = $m_fin; }
+	else { $m_fout = $opt_output; }
 	
 	if (-e $m_fout) {
 		print "Overwrite '$m_fout'?[y/n*] : ";
