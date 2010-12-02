@@ -67,7 +67,7 @@ sub main
 	if (!defined($opt_output)) { $m_fout = $m_fin . '.dat'; }
 	else { $m_fout = $opt_output; }
 	
-	if (-e $m_fout) {
+	if ((-e $m_fout) && (!$opt_force)) {
 		print "Overwrite '$m_fout'?[y/n*] : ";
 		my $ans = <STDIN>;
 		if (!(defined($ans) && ($ans =~ m/^y$/i))) {
